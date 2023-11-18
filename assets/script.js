@@ -16,3 +16,29 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+// elements recuperation
+const arrowLeft = document.querySelector('.arrow_left');
+const arrowRight = document.querySelector('.arrow_right');
+
+// adding event listeners
+arrowLeft.addEventListener('click', () => {
+  console.log('Clic sur la flèche gauche');
+});
+
+arrowRight.addEventListener('click', () => {
+  console.log('Clic sur la flèche droite'); 
+});
+
+// adding bulletpoints
+const dots = document.querySelector('.dots');
+const nbSlides = slides.length;
+
+for (let i = 0; i < nbSlides; i++) {
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  
+  dots.appendChild(dot);
+}
+
+dots.firstElementChild.classList.add('dot_selected');
