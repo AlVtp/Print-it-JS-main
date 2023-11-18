@@ -62,10 +62,18 @@ function updateUI() {
 // funtion for click on right arrow
 function slideRight() {
   currentIndex++;
+  // funtion for when the slide is at the last bulletpoint and the right arrow is clicked, reseting to slide 0
+  if(currentIndex >= nbSlides) {
+    currentIndex = 0;
+  }
   updateUI();
 }
 // funtion for click on left arrow
 function slideLeft() {
   currentIndex--;
+  // funtion for when the slide is at the first bulletpoint and the left arrow is clicked, going to last slide
+  if(currentIndex < 0) {
+    currentIndex = nbSlides - 1;
+  }
   updateUI(); 
 }
